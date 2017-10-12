@@ -104,3 +104,4 @@ venv.bak/
 .mypy_cache/
 
 mkblog/settings.py
+.vscode/tags
