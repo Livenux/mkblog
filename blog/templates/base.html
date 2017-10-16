@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <!-- css -->
-    <link rel="shortcut icon" href="{% static 'blog/img/favicon.ico' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'blog/img/favicon.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="{% static 'blog/css/pace.css' %}">
@@ -117,7 +117,7 @@
                         <ul>
                             {% for date in date_list %}
                             <li>
-                                <a href="#">{{ date.year }} 年 {{date.month}} 月</a>
+                                <a href="{% url 'blog:archives' date.year date.month %}">{{ date.year }} 年 {{date.month}} 月</a>
                             </li>
                             {% empty %}
                             暂无归档
@@ -131,7 +131,7 @@
                         <ul>
                             {% for category in category_list %}
                             <li>
-                                <a href="#">{{ category.name }}
+                                <a href="{% url 'blog:category' category.pk %}">{{ category.name }}
                                     <span class="post-count">(13)</span>
                                 </a>
                             </li>
